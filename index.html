@@ -37,13 +37,24 @@
             margin-top: 15px;
             display: inline-block;
             padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.25);
             border-radius: 12px;
             font-size: 0.95em;
             font-weight: bold;
             letter-spacing: 0.5px;
             animation: fadeIn 3s ease-in-out;
         }
+        /* 버전 색상 프리셋 */
+        .color-0 { background: #FF6B6B; }
+        .color-1 { background: #FFD93D; }
+        .color-2 { background: #6BCB77; }
+        .color-3 { background: #4D96FF; }
+        .color-4 { background: #9D4EDD; }
+        .color-5 { background: #FF914D; }
+        .color-6 { background: #00B4D8; }
+        .color-7 { background: #F15BB5; }
+        .color-8 { background: #43AA8B; }
+        .color-9 { background: #F28482; }
+
         @keyframes fadeIn {
             from {opacity: 0; transform: translateY(-20px);}
             to {opacity: 1; transform: translateY(0);}
@@ -58,6 +69,19 @@
 <body>
 <h1>Hello from Azure CI/CD!</h1>
 <p class="pulse">This page was deployed automatically via CI/CD</p>
-<span class="version-tag">Version 1.0.0</span>
+<span id="versionTag" class="version-tag">Version 1.0.1</span>
+
+<script>
+    // 버전 번호 가져오기
+    const versionElement = document.getElementById('versionTag');
+    const versionText = versionElement.textContent;
+
+    // 마지막 숫자 추출 (없으면 0)
+    const match = versionText.match(/(\d+)$/);
+    const lastDigit = match ? parseInt(match[0], 10) % 10 : 0;
+
+    // 해당 숫자에 맞는 색상 클래스 추가
+    versionElement.classList.add(`color-${lastDigit}`);
+</script>
 </body>
 </html>
