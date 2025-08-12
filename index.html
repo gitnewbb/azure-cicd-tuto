@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Azure CI/CD Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0078D7, #00A4EF);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .pulse {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        .version-tag {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            font-size: 0.95em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.05);}
+            100% {transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+<h1>Hello from Azure CI/CD!</h1>
+<p class="pulse">This page was deployed automatically via CI/CD</p>
+<span class="version-tag">Version 1.0.0</span>
+</body>
+</html>
